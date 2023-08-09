@@ -11,6 +11,9 @@ app.use(cors())
 app.use(express.json())
 app.use(fileUpload());
 
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
 app.use('/files', express.static(path.resolve('files')))
 app.post('/upload', async (req, res) => {
   try {
